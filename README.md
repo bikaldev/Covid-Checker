@@ -6,5 +6,6 @@ This project involves a web-app frontend that accepts valid chest x-ray images o
 
 ![image](https://github.com/bikaldev/Covid-Checker/assets/73520298/aacf6d86-f791-4879-b9b5-6b5436033627)
 
-![Uploading image.png…]()
+![image](https://github.com/bikaldev/Covid-Checker/assets/73520298/8f8ee7de-1a6d-4a30-8282-8fccdaa91611)
+
 
