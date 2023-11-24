@@ -1,0 +1,84 @@
+<style>
+    container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  </style>
+<div class="container" style="margin: 50px;">
+    <div class="row" style="margin-bottom: 10px;">
+        <div class="col-5">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" style="background-color: rgb(48, 48, 48); color: white;">Name: {{this.name}} </li>
+                  <li class="list-group-item" style="background-color: rgb(48, 48, 48);color: white;"> Age: {{ this.age }} </li>
+                  <li class="list-group-item" style="background-color: rgb(48, 48, 48);color: white;">Gender: {{this.gender[0].toUpperCase()}}</li>
+                </ul>
+              </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-7">
+            <div id="drop-area">
+                <div class="my-form">
+                  <figure *ngIf="!this.imageUploaded">
+                    <img src="../../assets/images/XRay.png" alt="Upload Picture" width="200px" height="150px">
+                  </figure>
+                  <figure *ngIf="this.imageUploaded">
+                    <img [src]="this.imagePath" alt="Uploaded Picture" width="230px" height="230px" style="border:7px double gray;">
+                  </figure>
+                  <p *ngIf="!this.result">  
+                    {{ this.errorMsg }}
+                  </p>
+                  <div *ngIf="this.result">
+                     <div class="row">
+                      <div class="col-3 d-flex justify-content-center">
+                        <h4 style="color: whitesmoke;">
+                          Diagnosis:
+                        </h4>
+                       </div>
+                       <div class="col-3 d-flex justify-content-center">
+                        <h4 style="color: whitesmoke;">
+                          {{ this.diagnosis }}
+                        </h4>
+                       </div>
+                     </div>
+                     <div class="row" *ngIf = "this.probab !== ''">
+                      <div class="col-3 d-flex justify-content-center">
+                        <h4 style="color: whitesmoke;">
+                          Certainty:
+                        </h4>
+                      </div>
+                      <div class="col-3 d-flex justify-content-center">
+                        <h4 style="color: whitesmoke;">
+                          {{ this.probab }}
+                        </h4>
+                      </div>
+                     </div> 
+                  </div>
+                  <div *ngIf="!this.imageUploaded">
+                  <input type="file" id="fileElem" accept="image/*" name="cxrImage" (change) = "onSelect($event)" ngModel  required>
+                  <label class="btn btn-success " for="fileElem" style="text-align: center">Browse</label>
+                 </div>
+                  <div class="row" *ngIf="this.imageUploaded">
+                    <div class="col" *ngIf = "!this.isFetching">
+                      <button type = 'submit' (click)="onsubmit()" class="btn btn-success " style="text-align: center" [disabled]="!this.imageUploaded">Analyze</button>
+                    </div>
+                    <div class="col" *ngIf = "this.isFetching">
+                      <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <button type = 'reset' class="btn btn-danger" (click) = "onReset()" style="text-align: center" [disabled]="!this.imageUploaded">Reset</button>
+                    </div>
+                  </div>
+                </div>
+              </div>        
+        </div>
+        
+    </div>
+    
+</div>
+  

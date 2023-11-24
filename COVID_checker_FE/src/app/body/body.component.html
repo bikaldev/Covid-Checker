@@ -1,0 +1,117 @@
+<style>
+  container {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+</style>
+<div class="container">
+
+    <div class="row">
+          <!-- text group -->
+      <div class="col-sm align-self-start" style="float: left; margin-top: 30px;">
+        <h1 style="color: whitesmoke; white-space: nowrap; text-align: left; font-family:cursive; font-size: 50px;">WELCOME</h1>
+        <!-- <hr style="color:aliceblue; width: 480px;"> -->
+        <hr style="color:aliceblue; width: 480px;">
+
+        <form (ngSubmit)="onsubmit(bform)" #bform="ngForm">
+          
+          <!-- <fieldset id="gender" >
+            <div class="form-check form-check-inline mb-0 me-4">
+              <input type="radio" class="form-check-input"  name="gender" id="femaleGender"
+                value="female" ngModel required>
+              <label class="form-check-label" for="femaleGender" style="color: whitesmoke;">Female</label>
+            </div>
+  
+            <div class="form-check form-check-inline mb-0 me-4">
+              <input type="radio" class="form-check-input"  name="gender" id="maleGender"
+                value="male" ngModel required>
+              <label class="form-check-label" for="maleGender" style="color: whitesmoke;">Male</label>
+            </div>
+  
+            <div class="form-check form-check-inline mb-0">
+              <input type="radio" class="form-check-input" name="gender" id="otherGender"
+                value="other" ngModel required>
+              <label class="form-check-label" for="otherGender" style="color: whitesmoke;">Other</label>
+            </div>
+          </fieldset> -->
+          
+          <!-- <h6 class="mb-0 me-4" style="color: whitesmoke; margin-top: 10px;">Gender</h6> -->
+          
+        
+          <br>
+         <!-- drop-area -->
+        <div id="drop-area">
+          <div class="my-form">
+            <figure *ngIf="!this.imageUploaded">
+              <img src="../../assets/images/XRay.png" alt="Upload Picture" width="200px" height="150px">
+            </figure>
+            <figure *ngIf="this.imageUploaded">
+              <img [src]="this.imagePath" alt="Uploaded Picture" width="230px" height="230px" style="border:7px double gray;">
+            </figure>
+            <p *ngIf="!this.result">  
+              {{ this.errorMsg }}
+            </p>
+            <div *ngIf="this.result">
+               <div class="row">
+                <div class="col-3">
+                  <h4 style="color: whitesmoke;">
+                    Diagnosis:
+                  </h4>
+                 </div>
+                 <div class="col-3">
+                  <h4 style="color: whitesmoke;">
+                    {{ this.diagnosis }}
+                  </h4>
+                 </div>
+               </div>
+               <div class="row" *ngIf = "this.probab !== ''">
+                <div class="col-3">
+                  <h4 style="color: whitesmoke;">
+                    Certainty:
+                  </h4>
+                </div>
+                <div class="col-3">
+                  <h4 style="color: whitesmoke;">
+                    {{ this.probab }}
+                  </h4>
+                </div>
+               </div> 
+            </div>
+            <div *ngIf="!this.imageUploaded">
+            <input type="file" id="fileElem" accept="image/*" name="cxrImage" (change) = "onSelect($event)" ngModel  required>
+            <label class="btn btn-success " for="fileElem" style="text-align: center">Browse</label>
+           </div>
+            <div class="row" *ngIf="this.imageUploaded">
+              <div class="col" *ngIf = "!this.isFetching">
+                <button type = 'submit'class="btn btn-success " style="text-align: center" [disabled]="!bform.valid || !this.imageUploaded">Analyze</button>
+              </div>
+              <div class="col" *ngIf = "this.isFetching">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+              <div class="col">
+                <button type = 'reset' class="btn btn-danger" (click) = "onReset(bform)" style="text-align: center" [disabled]="!bform.valid || !this.imageUploaded">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    
+      </div>
+    
+            <!-- sample chest x-ray image -->
+        <div class="col-sm-5"  style="text-align: right; margin-top: 100px;">
+
+        <figure>
+            <img class = "space50"  style="border:7px double gray;" src="../assets/images/HPimg.jpeg" width="300" height="330" alt="An example of chest x-ray" />
+        </figure>
+        <p style="text-align: right;">(Sample Image)</p>
+        </div>
+    </div>
+</div>
+
+
+  
+  

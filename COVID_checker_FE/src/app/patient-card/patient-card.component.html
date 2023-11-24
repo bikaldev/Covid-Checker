@@ -1,0 +1,17 @@
+<div class="card" style="background-color: grey; margin-top: 10px;">
+    <div class="card-body">
+      <h4 class="card-title">{{ this.patient.name }}</h4>
+      <p class="card-text">{{ this.patient.age }}, {{ this.patient.gender }} </p>
+      <p class="card-text"> {{ this.patient.address }} </p>
+      <p  class="card-text">{{ this.patient.email }}</p>
+    
+      <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" (click) = "onViewHistory()">View History</button>      
+        </div>
+        <div class="col">
+            <button class="btn btn-success" (click)="onAnalyze()" >Analyze CXR</button>
+        </div>
+      </div>
+    </div>
+</div>

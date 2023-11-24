@@ -1,0 +1,21 @@
+
+<div class="container" *ngIf = "historyList.length !== 0">
+    <div class="row" style="margin-bottom: 10px; margin-top: 10px;">
+        <div class="col-5">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" style="background-color: rgb(48, 48, 48); color: white;">Name: {{this.name}} </li>
+                  <li class="list-group-item" style="background-color: rgb(48, 48, 48);color: white;"> Age: {{ this.age }} </li>
+                  <li class="list-group-item" style="background-color: rgb(48, 48, 48);color: white;">Gender: {{this.gender[0].toUpperCase()}}</li>
+                </ul>
+              </div>
+        </div>
+        
+    </div>
+    <div class="row" *ngFor="let history of this.historyList">
+        <app-history-card [history] = "history"></app-history-card>
+    </div>
+</div>
+<div class="container">
+    <p *ngIf = "historyList.length == 0"> NO HISTORY FOUND</p>
+</div>

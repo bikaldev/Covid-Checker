@@ -1,0 +1,26 @@
+<div class="container" style="margin: 20px;">
+    <div class="row">
+        <div class="col-6">
+          <input type="text" class ="form-control" placeholder="Search Patients" #searchKey>
+        </div>
+        <div class="col-2">
+          <button class ="btn btn-primary fileter-button filter-button" (click) = "onSearch(searchKey)">
+              Search
+          </button>
+        </div>
+    </div>                
+
+</div>
+    
+<div class="py-5" *ngIf="this.patientList.length !== 0">
+    <div class="container">
+      <div class="row hidden-md-up">
+            <div class="col-md-4" *ngFor="let patient of this.patientList">
+                <app-patient-card [patient]="patient"></app-patient-card>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf = "this.patientList.length === 0">
+    <div class="form-text " style="color: red;">No Result Found!</div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container card">
+    <div class="row">
+        <div class="col-9">
+            <p class="title">
+                {{ this.history.name}}
+            </p>
+            <p class="sub-title">
+                {{this.history.gender}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p class="sub-title"> Diagnosis: </p>
+        </div>
+        <div class="col-5">
+            <p class="sub-title">
+                {{ this.history.diagnosis}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p class="sub-title">
+                Certainty:
+            </p>
+        </div>
+        <div class="col-5">
+            <p class="sub-title">
+                {{ this.history.certainty }}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p class="sub-title">
+                Date:
+            </p>
+        </div>
+        <div class="col-5">
+            <p class="sub-title">
+                {{ this.history.createdAt.slice(0,10) }}
+            </p>
+        </div>
+    </div>
+</div>

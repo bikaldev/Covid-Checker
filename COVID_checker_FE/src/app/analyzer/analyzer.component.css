@@ -1,0 +1,63 @@
+
+
+#drop-area {
+
+    border: 5px double lightgray;
+    border-radius: 20px;
+    width: 480px;
+    height: 420px;
+    font-family: sans-serif;
+    margin-top: 40px auto;
+    padding: 25px;
+    text-align: center;
+    
+  }
+  #drop-area.highlight {
+    border-color: purple;
+  }
+  p {
+    margin-top: 0;
+    color: #ccc;
+    font-size: larger;
+  }
+  .my-form {
+    margin-bottom: 10px;
+  }
+  #gallery {
+    margin-top: 10px;
+  }
+  #gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: medium;
+  }
+  .btnborder{
+    border-color: black;
+    border-width: 5px;
+    border-style: double;
+    background-color: rgb(129, 200, 244);
+    color: rgb(40, 39, 39);
+  }
+  .button:hover {
+    background: #cac5c5;
+  }
+  #fileElem {
+    display: none;
+  }
+  .space50{
+    margin-top: 50px;
+  }
+  .bodyimg{
+    margin-right: 200;
+  }
+  

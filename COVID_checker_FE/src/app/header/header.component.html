@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <!-- implementing a navigation bar -->
+        
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="height: 70px;" >
+
+    <figure>
+        <img src="assets/images/icon.jpeg" alt="icon" height="50px" width="50px" class = "top10px space30">
+    </figure>
+    <h2 class ="navbar-brand space20" style="font-family:Lucida Grande; color: whitesmoke;" >COVID-19 DETECTOR</h2>
+    
+    <div class="collapse navbar-collapse aligh" id="navbarText" >
+      <ul class="navbar-nav ms-auto" style="margin-right: 10px;">
+        <li class="nav-item active">
+            <a class="nav-link space500 fpx" href="#" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-fw fa-lg fa-home"></i> Home</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!this.isLoggedIn">
+            <a  class="nav-link space30 fpx" href="#" routerLink="login" routerLinkActive="active"><i class="fa fa-fw fa-lg fa-user"></i>LogIn</a>
+        </li>
+
+        <li class="nav-item"  *ngIf ="this.isLoggedIn">
+          <a  class="nav-link space30 fpx" href="#" routerLink="register" routerLinkActive="active"><i class="fa fa-fw fa-lg fa-user"></i>Register Patients</a>
+        </li>
+
+        <!-- <li class="nav-item" *ngIf ="this.isLoggedIn">
+          <a class="nav-link space30 fpx" href="#" routerLink="history" routerLinkActive="active"><i class="fa fa-fw fa-lg fa-history"></i>Check History</a>
+        </li> -->
+    
+        <li class="nav-item"  *ngIf ="this.isLoggedIn">
+          <a class="nav-link space30 fpx" href="#" routerLink="patient" routerLinkActive="active"><i class="fa fa-fw fa-lg fa-book" routerLink="about" routerLinkActive="active"></i> Patients </a>
+        </li>
+        <li class="nav-item" *ngIf="this.isLoggedIn">
+          <div class="col-auto" [appDropdown]="signout" style="margin-left: 10px;">
+            <div class="dropdown" >
+                <button class = "btn btn-primary dropdown-toggle filter-button" style="background-color:rgb(33,37,41)"> {{ this.name }}  </button>
+            </div>
+            <div class="dropdown-menu" #signout>
+                <div class="dropdown-item" (click) = "onAuth()" id="Title"> Sign Out </div>
+            </div>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </nav>

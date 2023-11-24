@@ -1,0 +1,64 @@
+
+<div class="form-body">
+  <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Patient Registration</h3>
+                    <p>Fill in the data below.</p>
+                    <form (ngSubmit)="onRegister(form)" #form = 'ngForm'>
+  
+                        <div class="col-md-12">
+                           <input  style="font-size: larger;" class="form-control" type="text" name="name" placeholder="Full Name" ngModel required>
+                        </div>
+  
+                        <div class="col-md-12">
+                            <input style="font-size: larger;" class="form-control" type="email" name="email" placeholder="E-mail" ngModel required>
+                        </div>
+  
+  
+                       <div class="col-md-12">
+                          <input style="font-size: larger;" class="form-control" type="text" name="address" placeholder="Address" ngModel required>
+                       </div>
+
+                       <div class="col-md-12">
+                        <input style="font-size: larger;" class="form-control" type="text" name="age" placeholder="Age" ngModel required>
+                      </div>
+  
+  
+                       <div class="col-md-12 mt-3">
+                        <fieldset id="gender" >
+                          <div class="form-check form-check-inline mb-0 me-4">
+                            <input type="radio" class="form-check-input"  name="gender" id="femaleGender"
+                              value="female" ngModel required>
+                            <label class="form-check-label" for="femaleGender" style="color: whitesmoke;">Female</label>
+                          </div>
+                
+                          <div class="form-check form-check-inline mb-0 me-4">
+                            <input type="radio" class="form-check-input"  name="gender" id="maleGender"
+                              value="male" ngModel required>
+                            <label class="form-check-label" for="maleGender" style="color: whitesmoke;">Male</label>
+                          </div>
+                
+                          <div class="form-check form-check-inline mb-0">
+                            <input type="radio" class="form-check-input" name="gender" id="otherGender"
+                              value="other" ngModel required>
+                            <label class="form-check-label" for="otherGender" style="color: whitesmoke;">Other</label>
+                          </div>
+                        </fieldset>
+                        </div>
+              
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4" *ngIf="this.isLoading">
+                        <div class="spinner-border text-primary" role="status">
+                          <span class="sr-only">Loading...</span>
+                      </div>
+                      </div>
+                        <div class="form-button mt-3" *ngIf="!this.isLoading"> 
+                            <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

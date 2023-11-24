@@ -1,0 +1,28 @@
+.space100{
+    margin-left: 100px;
+}
+
+.space50{
+    margin-left: 50px;
+}
+
+.space30{
+    margin-left: 30px;
+}
+
+.space500{
+    margin-left: 500px;
+}
+
+.space20{
+    margin-left: 20px;
+}
+.top10px{
+    margin-top: 10px;
+}
+.fpx{
+    font-size: 18px;
+}
+.bg{
+    background-image: "assets/images/bg.jpeg";
+}
